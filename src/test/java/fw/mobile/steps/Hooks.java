@@ -6,12 +6,12 @@ import fw.mobile.MobileDriverManager;
 
 import java.net.MalformedURLException;
 
-public class Hooks extends MobileDriverManager {
+public class Hooks {
 
     @Before
     public void prepareData() {
         try {
-            prepareAndroidNative();
+            MobileDriverManager.prepareAndroidNative();
         } catch (MalformedURLException e) {
             e.printStackTrace();
         }

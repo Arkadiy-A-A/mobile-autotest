@@ -14,10 +14,10 @@ import java.net.URL;
 public class MobileDriverManager {
 
     @Getter private static AndroidDriver driver;
-    public WebDriverWait wait;
+    public static WebDriverWait wait;
 
 
-    protected void prepareAndroidNative() throws MalformedURLException {
+    public static void prepareAndroidNative() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
         // Максимальная продолжительность одного теста в минутах
