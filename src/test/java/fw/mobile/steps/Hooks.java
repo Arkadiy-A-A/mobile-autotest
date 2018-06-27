@@ -2,11 +2,11 @@ package fw.mobile.steps;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import fw.mobile.DriverSetup;
+import fw.mobile.MobileDriverManager;
 
 import java.net.MalformedURLException;
 
-public class Hooks extends DriverSetup {
+public class Hooks extends MobileDriverManager {
 
     @Before
     public void prepareData() {
@@ -19,6 +19,6 @@ public class Hooks extends DriverSetup {
 
     @After
     public void clearData() {
-
+        MobileDriverManager.getDriver().quit();
     }
 }

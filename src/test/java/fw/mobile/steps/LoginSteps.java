@@ -4,14 +4,15 @@ import cucumber.api.java.ru.Дано;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.То;
 import cucumber.api.java.ru.Тогда;
-import fw.mobile.DriverSetup;
+import fw.mobile.pages.LoginPage;
 
-public class LoginSteps extends DriverSetup {
+public class LoginSteps {
+
+    LoginPage page = new LoginPage();
 
     @Дано("^Настроеное и запущеное приложение$")
     public void настроеноеИЗапущеноеПриложение() throws Throwable {
-        Thread.sleep(15000);
-        driver.quit();
+        page.getButtonAccept().click();
     }
 
     @Когда("^Когда пользователь вводит верный \"([^\"]*)\" и \"([^\"]*)\"$")
