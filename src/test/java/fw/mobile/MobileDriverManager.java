@@ -5,6 +5,7 @@ import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import lombok.Getter;
 import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.io.File;
 import java.net.MalformedURLException;
@@ -13,6 +14,7 @@ import java.net.URL;
 public class MobileDriverManager {
 
     @Getter private static AndroidDriver driver;
+    public WebDriverWait wait;
 
 
     protected void prepareAndroidNative() throws MalformedURLException {
@@ -42,6 +44,7 @@ public class MobileDriverManager {
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
 
         driver = new AndroidDriver(new URL("http://127.0.0.1:4723/wd/hub"), capabilities);
+        wait = new WebDriverWait(driver, 5);
     }
 
 }
