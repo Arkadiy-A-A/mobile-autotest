@@ -1,6 +1,5 @@
 package fw.mobile.steps;
 
-import cucumber.api.PendingException;
 import cucumber.api.java.ru.Дано;
 import cucumber.api.java.ru.Когда;
 import cucumber.api.java.ru.То;
@@ -11,7 +10,8 @@ public class LoginSteps extends DriverSetup {
 
     @Дано("^Настроеное и запущеное приложение$")
     public void настроеноеИЗапущеноеПриложение() throws Throwable {
-        driver.
+        Thread.sleep(15000);
+        driver.quit();
     }
 
     @Когда("^Когда пользователь вводит верный \"([^\"]*)\" и \"([^\"]*)\"$")

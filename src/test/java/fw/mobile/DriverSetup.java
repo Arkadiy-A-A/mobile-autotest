@@ -1,6 +1,7 @@
 package fw.mobile;
 
 import io.appium.java_client.android.AndroidDriver;
+import io.appium.java_client.remote.MobileBrowserType;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.io.File;
@@ -14,11 +15,12 @@ public class DriverSetup {
     protected void prepareAndroidNative() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
-        capabilities.setCapability("deviceName", "Nexus-5X-Oreo-8.0");
-        capabilities.setCapability("platfomName", "Android");
+        capabilities.setCapability("deviceName", "emulator-5554");
+        capabilities.setCapability("platformName", "Android");
+        capabilities.setCapability("browserName", MobileBrowserType.CHROME);
 
         File appDir = new File("C:\\Users\\Arkadii_Allakhverdii\\IdeaProjects" +
-                "\\mobile-autotests\\src\\main\\resources");
+                "\\mobile-autotests\\src\\main\\resources\\");
         File app = new File(appDir, "Mobi-Calculator.apk");
 
         capabilities.setCapability("apk", app.getAbsolutePath());
