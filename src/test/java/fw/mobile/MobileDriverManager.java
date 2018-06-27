@@ -1,6 +1,5 @@
 package fw.mobile;
 
-import io.appium.java_client.MobileElement;
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
 import lombok.Getter;
@@ -37,8 +36,7 @@ public class MobileDriverManager {
         // Пакет запуска
         capabilities.setCapability("appPackage", "my.android.calc");
 
-        File appDir = new File("C:\\Users\\Arkadii_Allakhverdii\\IdeaProjects" +
-                "\\mobile-autotests\\src\\main\\resources\\");
+        File appDir = new File(".\\src\\main\\resources\\");
         File app = new File(appDir, "Mobi-Calculator.apk");
 
         capabilities.setCapability(MobileCapabilityType.APP, app.getAbsolutePath());
