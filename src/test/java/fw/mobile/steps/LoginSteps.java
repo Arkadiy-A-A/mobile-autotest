@@ -6,13 +6,24 @@ import cucumber.api.java.ru.То;
 import cucumber.api.java.ru.Тогда;
 import fw.mobile.pages.LoginPage;
 
+import static fw.mobile.MobileDriverManager.appFocusUpdate;
+import static fw.mobile.MobileDriverManager.getDriver;
+
 public class LoginSteps {
 
     LoginPage page = new LoginPage();
 
     @Дано("^Настроеное и запущеное приложение$")
     public void настроеноеИЗапущеноеПриложение() throws Throwable {
+        getDriver().openNotifications();
+        Thread.sleep(50000);
         page.getButtonAccept().click();
+        appFocusUpdate("15151");
+        page.getButtonAccept().click();
+        appFocusUpdate("511");
+        page.getButtonAccept().click();
+        appFocusUpdate("1561");
+        page.getButtonNine().click();
     }
 
     @Когда("^Когда пользователь вводит верный \"([^\"]*)\" и \"([^\"]*)\"$")
