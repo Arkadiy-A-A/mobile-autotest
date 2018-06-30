@@ -1,12 +1,4 @@
-*.class
-
-.mtj.tmp/
-
-
-#Pakage File#
-*.jar
-*.war
-*.ear
-
 *.iml
-.idea/*
+.idea/
+src/main/resources/Beta by Crashlytics.apk
+target/
